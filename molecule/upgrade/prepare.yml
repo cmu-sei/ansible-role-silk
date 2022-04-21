@@ -13,7 +13,7 @@
 - name: Prepare
   hosts: all
   vars:
-    silk_version: "3.19.0"
+    silk_version: "3.19.1"
   roles:
     - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
   environment:

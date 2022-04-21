@@ -13,35 +13,25 @@
 dependency:
   name: galaxy
   options:
-    role-file: molecule/default/requirements.yml
+    role-file: molecule/default/requirements.yml  
 driver:
   name: docker
-lint: |
-  set -e
-  yamllint .
-  ansible-lint .
-  flake8
 platforms:
-  - name: centos7-upgrade-${BUILD_TAG:-test}
-    image: "milcom/centos7-systemd"
-    privileged: true
+  - name: instance
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-centos7}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    env:
-      http_proxy: ${http_proxy}
-      https_proxy: ${https_proxy}
-      no_proxy: ${no_proxy}
-  - name: ubuntu18-upgrade-${BUILD_TAG:-test}
-    image: "paulfantom/ubuntu-molecule:18.04"
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    pre_build_image: true
     env:
-      http_proxy: ${http_proxy}
-      https_proxy: ${https_proxy}
-      no_proxy: ${no_proxy}
+      http_proxy: "${http_proxy}"
+      https_proxy: "${https_proxy}"
+      no_proxy: "${no_proxy} "   
 provisioner:
   name: ansible
+  playbooks:
+    converge: ${MOLECULE_PLAYBOOK:-converge.yml}
 verifier:
   name: testinfra
   options:
