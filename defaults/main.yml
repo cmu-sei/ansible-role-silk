@@ -12,12 +12,13 @@
 #DM20-0487
 # defaults file for silk
 netsa_url: "http://tools.netsa.cert.org/releases/"
-silk_version: "3.19.1"
+silk_version: "3.19.2"
 silk_name: "silk-{{ silk_version }}"
 silk_tgz: "{{ silk_name }}.tar.gz"
 silk_url: "{{ netsa_url }}{{ silk_tgz }}"
 silk_timeout: 10
 silk_checksums:
+  '3.19.2': sha256:358ba718208dcfb14a22664a6d935f343bd7a1976729e5619ba7c702b70e3a7d
   '3.19.1': sha256:b287de07502c53d51e9ccdcc17a46d8a4d7a59db9e5ae7add7b82458a9da45a7
   '3.19.0': sha256:0f5bdcf437a1dc0429a5acb48b8e9ef18050999a230920369c05b2db9f020695
   '3.18.3': sha256:25fc734d6cac7d39285877ff5efd78bd4e5bb34523a6c4f6174afc9e2a87c2a2
