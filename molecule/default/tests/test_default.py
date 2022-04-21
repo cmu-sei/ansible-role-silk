@@ -33,7 +33,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_silk_version(host):
-    version = "3.19.1"
+    version = "3.19.2"
     command = """/usr/local/bin/silk_config --silk-version"""
 
     cmd = host.run(command)
