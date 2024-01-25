@@ -12,7 +12,7 @@
 #DM20-0487
 # defaults file for silk
 netsa_url: "http://tools.netsa.cert.org/releases/"
-silk_version: "3.19.2"
+silk_version: "3.22.1"
 silk_name: "silk-{{ silk_version }}"
 silk_tgz: "{{ silk_name }}.tar.gz"
 silk_url: "{{ netsa_url }}{{ silk_tgz }}"
