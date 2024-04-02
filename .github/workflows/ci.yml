@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codebase.
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: 'cmusei.silk'
 
@@ -60,7 +60,7 @@ jobs:
 
     steps:
       - name: Check out the codebase.
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: 'cmusei.silk'
 
