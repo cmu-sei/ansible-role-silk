@@ -26,15 +26,20 @@ galaxy_info:
       versions:
         - 7
         - 8
-    - name: Ubuntu
+        - 9
+    - name: Fedora
       versions:
-        - xenial
-        - bionic
-        - focal
+        - all
     - name: Debian
       versions:
         - buster
         - bullseye
+        - bookworm
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
+        - jammy
 
   galaxy_tags:
     - cert
